@@ -1,0 +1,73 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 31,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "engine-debug",
+      "displayName": "SlagMirror engine tests (Debug)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/engine-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "SLAGMIRROR_BUILD_PLUGIN": "ON",
+        "SLAGMIRROR_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "plugin-release",
+      "displayName": "SlagMirror plugin bundles (Release)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/plugin-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "SLAGMIRROR_BUILD_PLUGIN": "ON",
+        "SLAGMIRROR_BUILD_TESTS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "engine-debug",
+      "configurePreset": "engine-debug",
+      "targets": [
+        "slagmirror_engine_tests",
+        "slagmirror_plugin_bridge_tests",
+        "slagmirror_hosted_negative_bridge_tests",
+        "slagmirror_standalone_bridge_tests"
+      ]
+    },
+    {
+      "name": "plugin-release",
+      "configurePreset": "plugin-release",
+      "targets": [
+        "slagmirror_release_bundles",
+        "slagmirror_engine_tests",
+        "slagmirror_plugin_bridge_tests",
+        "slagmirror_hosted_negative_bridge_tests",
+        "slagmirror_standalone_bridge_tests"
+      ]
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "engine-debug",
+      "configurePreset": "engine-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "plugin-release",
+      "configurePreset": "plugin-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
