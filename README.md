@@ -34,7 +34,7 @@ cmake --build --preset plugin-release
 ctest --preset plugin-release
 ```
 
-Release bundles are generated under `build/plugin-release` by YUP's plugin targets:
+Release bundles are staged under `artifacts/plugin-release/<platform-arch>/{standalone,vst3,au}` by the common `ehl_stage_products` target. `build/` remains CMake's internal workspace; Windows uses `windows-x64` without AU.
 
 - `slagmirror_release_bundles`
 - `slagmirror_standalone_plugin`

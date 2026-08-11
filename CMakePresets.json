@@ -46,7 +46,7 @@
       "name": "plugin-release",
       "configurePreset": "plugin-release",
       "targets": [
-        "slagmirror_release_bundles",
+        "ehl_stage_products",
         "slagmirror_engine_tests",
         "slagmirror_plugin_bridge_tests",
         "slagmirror_hosted_negative_bridge_tests",
