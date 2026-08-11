@@ -5,7 +5,7 @@ SlagMirror v0.1.0 is an independent YUP stereo effect. Its sound identity is uns
 ## Product Shape
 
 - Formats: Standalone and VST3 on macOS and Windows; AUv2 additionally on macOS.
-- Stable IDs: app `audio.2bit.slagmirror`, plugin `audio.2bit.SlagMirror`, AU subtype `SlMr`.
+- Stable IDs: app `jp.ehl.slagmirror`, plugin `jp.ehl.slagmirror`, AU subtype `SlMr`.
 - Host parameters: `Mirror`, `Tilt`, `Scatter`, `Feedback`, `Mix`, `Output`.
 - State format: parameter ID/value pairs with magic `SLM1` and version `1`.
 - Hosted wrappers: stereo input to effect to stereo output; no internal generator.

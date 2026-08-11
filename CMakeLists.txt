@@ -77,12 +77,12 @@ if(SLAGMIRROR_BUILD_PLUGIN)
         TARGET_NAME slagmirror
         TARGET_VERSION ${PROJECT_VERSION}
         TARGET_IDE_GROUP "SlagMirror"
-        TARGET_APP_ID "audio.2bit.slagmirror"
-        TARGET_APP_NAMESPACE "audio.2bit"
+        TARGET_APP_ID "jp.ehl.slagmirror"
+        TARGET_APP_NAMESPACE "jp.ehl"
         TARGET_CXX_STANDARD 20
-        PLUGIN_ID "audio.2bit.SlagMirror"
+        PLUGIN_ID "jp.ehl.slagmirror"
         PLUGIN_NAME "SlagMirror"
-        PLUGIN_VENDOR "2bit"
+        PLUGIN_VENDOR "ehl_"
         PLUGIN_EMAIL ""
         PLUGIN_VERSION "${PROJECT_VERSION}"
         PLUGIN_DESCRIPTION "Stereo sample-domain mirror folding and reflective scatter effect"
@@ -93,7 +93,7 @@ if(SLAGMIRROR_BUILD_PLUGIN)
         PLUGIN_CREATE_VST3 ON
         PLUGIN_CREATE_AU ${SLAGMIRROR_CREATE_AU}
         PLUGIN_AU_SUBTYPE "SlMr"
-        PLUGIN_AU_MANUFACTURER "2Bit"
+        PLUGIN_AU_MANUFACTURER "EHL1"
         PLUGIN_AU_SANDBOX_SAFE ON
         PLUGIN_CREATE_AUv3 OFF
         PLUGIN_CREATE_LV2 OFF
@@ -178,9 +178,9 @@ if(SLAGMIRROR_BUILD_PLUGIN)
 
     if(APPLE)
         set_target_properties(slagmirror_standalone_plugin PROPERTIES
-            MACOSX_BUNDLE_GUI_IDENTIFIER "audio.2bit.slagmirror"
+            MACOSX_BUNDLE_GUI_IDENTIFIER "jp.ehl.slagmirror"
             MACOSX_BUNDLE_BUNDLE_NAME "SlagMirror"
-            XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "audio.2bit.slagmirror")
+            XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "jp.ehl.slagmirror")
     endif()
 
     if(APPLE AND SLAGMIRROR_ADHOC_SIGN)

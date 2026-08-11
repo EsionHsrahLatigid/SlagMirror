@@ -5,8 +5,8 @@ SlagMirror is a YUP-based stereo audio effect and standalone app. It folds audio
 ## Identity
 
 - Version: `0.1.0`
-- App ID: `audio.2bit.slagmirror`
-- Plugin ID: `audio.2bit.SlagMirror`
+- App ID: `jp.ehl.slagmirror`
+- Plugin ID: `jp.ehl.slagmirror`
 - AU subtype: `SlMr`
 - Vendor: `2bit`
 - Type: stereo input to stereo output effect
