@@ -86,7 +86,7 @@ if(SLAGMIRROR_BUILD_PLUGIN)
         PLUGIN_EMAIL ""
         PLUGIN_VERSION "${PROJECT_VERSION}"
         PLUGIN_DESCRIPTION "Stereo sample-domain mirror folding and reflective scatter effect"
-        PLUGIN_URL "https://github.com/2bbb/SlagMirror"
+        PLUGIN_URL "https://github.com/EsionHsrahLatigid/SlagMirror"
         PLUGIN_IS_SYNTH OFF
         PLUGIN_IS_MONO OFF
         PLUGIN_CREATE_CLAP OFF
