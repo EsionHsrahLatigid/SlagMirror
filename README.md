@@ -8,7 +8,8 @@ SlagMirror is a YUP-based stereo audio effect and standalone app. It folds audio
 - App ID: `jp.ehl.slagmirror`
 - Plugin ID: `jp.ehl.slagmirror`
 - AU subtype: `SlMr`
-- Vendor: `2bit`
+- Plugin vendor: `ehl_`
+- AU manufacturer: `EHL1`
 - Type: stereo input to stereo output effect
 - Host parameters: `Mirror`, `Tilt`, `Scatter`, `Feedback`, `Mix`, `Output`
 - macOS formats: Standalone, VST3, AUv2
@@ -21,6 +22,12 @@ Hosted plugin wrappers are strictly input to effect to output. They do not gener
 The standalone wrapper compiles an audition bridge only when YUP defines `YUP_AUDIO_PLUGIN_ENABLE_STANDALONE`. The editor exposes runtime-only audition enable/type controls plus input/output meters. Audition state is not a host parameter and is not serialized.
 
 ## Build
+
+Clone with `--recurse-submodules`, or initialize the shared [yup-ehl-design-module](https://github.com/EsionHsrahLatigid/yup-ehl-design-module) before configuring:
+
+```sh
+git submodule update --init
+```
 
 ```sh
 cmake --preset engine-debug

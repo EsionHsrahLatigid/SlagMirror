@@ -12,6 +12,16 @@ namespace slagmirror::plugin
 
 class SlagMirrorPlugin;
 
+} // namespace slagmirror::plugin
+
+namespace ehl::ui
+{
+class StripMeter;
+}
+
+namespace slagmirror::plugin
+{
+
 /** Native YUP parameter grid with standalone-only audition and stereo metering. */
 class ParameterGridEditor final
     : public yup::AudioProcessorEditor
@@ -34,24 +44,26 @@ public:
     void keyUp (const yup::KeyPress& key, const yup::Point<float>& position) override;
 
 private:
+    class AuditionButton;
+    class CycleTypeButton;
+
     void timerCallback() override;
     void publishAudition();
     void refreshAuditionButtons();
 
     yup::String title;
     yup::String warning;
-    std::uint32_t accentColor = 0xffff6f2du;
     std::unique_ptr<yup::Label> titleLabel;
     std::unique_ptr<yup::Label> warningLabel;
     std::vector<yup::AudioParameter::Ptr> parameters;
     std::vector<std::unique_ptr<yup::Label>> labels;
     std::vector<std::unique_ptr<yup::Slider>> sliders;
     std::vector<std::unique_ptr<yup::Label>> valueLabels;
-    std::unique_ptr<yup::TextButton> auditionButton;
-    std::unique_ptr<yup::TextButton> auditionTypeButton;
+    std::unique_ptr<AuditionButton> auditionButton;
+    std::unique_ptr<CycleTypeButton> auditionTypeButton;
     std::unique_ptr<yup::Label> meterLabel;
-    std::unique_ptr<yup::Component> inputMeter;
-    std::unique_ptr<yup::Component> outputMeter;
+    std::unique_ptr<ehl::ui::StripMeter> inputMeter;
+    std::unique_ptr<ehl::ui::StripMeter> outputMeter;
     SlagMirrorPlugin* slagmirrorProcessor = nullptr;
     float displayedInputPeak = 0.0f;
     float displayedOutputPeak = 0.0f;

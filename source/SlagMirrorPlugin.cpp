@@ -256,7 +256,7 @@ yup::AudioProcessorEditor* SlagMirrorPlugin::createEditor()
     return new ParameterGridEditor (*this,
                                     "SlagMirror",
                                     "Molten mirror plates, fractured symmetry, sample-domain reflection.",
-                                    0xffff6f2du);
+                                    0xfff2f2f0u);
 #endif
 }
 
