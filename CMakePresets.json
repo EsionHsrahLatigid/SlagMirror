@@ -29,6 +29,14 @@
         "SLAGMIRROR_BUILD_PLUGIN": "ON",
         "SLAGMIRROR_BUILD_TESTS": "ON"
       }
+    },
+    {
+      "name": "plugin-install",
+      "displayName": "Local plugin install (Release)",
+      "inherits": "plugin-release",
+      "cacheVariables": {
+        "EHL_COPY_PLUGIN_AFTER_BUILD": "ON"
+      }
     }
   ],
   "buildPresets": [
@@ -52,6 +60,11 @@
         "slagmirror_hosted_negative_bridge_tests",
         "slagmirror_standalone_bridge_tests"
       ]
+    },
+    {
+      "name": "plugin-install",
+      "configurePreset": "plugin-install",
+      "inherits": "plugin-release"
     }
   ],
   "testPresets": [
@@ -68,6 +81,11 @@
       "output": {
         "outputOnFailure": true
       }
+    },
+    {
+      "name": "plugin-install",
+      "configurePreset": "plugin-install",
+      "inherits": "plugin-release"
     }
   ]
 }
